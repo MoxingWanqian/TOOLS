@@ -41,6 +41,7 @@ def get_soup(url, headers=None, mode='get', params=None, proxies=None, verify=Tr
         resp = requests.get(url=url, headers=headers, params=params, proxies=proxies, verify=verify)
         resp.encoding = resp.apparent_encoding
         soup = BeautifulSoup(resp.text, 'lxml')
+        time.sleep(2)
         return soup
 
 
@@ -49,6 +50,7 @@ def get_content(url, headers=None, mode='get', params=None, proxies=None, verify
     if mode == 'get' or mode == 'GET':
         resp = requests.get(url, headers=headers, params=params, proxies=proxies, verify=verify)
         content = resp.content
+        time.sleep(2)
         return content
 
 
